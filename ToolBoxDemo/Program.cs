@@ -12,6 +12,7 @@ namespace ToolBoxDemo
         //access modifier --  Main takes an array of string called args
         static void Main(string[] args) //Main Method - program.exe file, aka executable /entry point. Double click on to start program
         {
+
             Console.WriteLine("Welcome to your Tool Box!\n");
             Console.WriteLine(" You can either hit \"Y\" then ENTER to continue \n\n OR \n\n hit \"N\" then ENTER to Clear the Console and Continue");
 
@@ -29,8 +30,8 @@ namespace ToolBoxDemo
             {
                 Console.WriteLine("Not sure friend, but I'm gonna close the program when you hit ENTER");
             }
-           
-           
+
+
             Console.ReadLine();
 
             // S - single responsibility issue (S.O.L.I.D.)
@@ -42,23 +43,38 @@ namespace ToolBoxDemo
             //Functions below this
             void KeyToContinue()
             {
-            Console.WriteLine("Hit ENTER to continue on with the code...");
-            Console.ReadLine();
+                Console.WriteLine("Hit ENTER to continue on with the code...");
+                Console.ReadLine();
             }
 
             void ClearConsole()
             {
-            Console.Clear();
-            Console.WriteLine("Congratulations! You've cleared the Console!...hit ENTER to close the program");
+                Console.Clear();
+                Console.WriteLine("Congratulations! You've cleared the Console!...hit ENTER to close the program");
             }
-            
+
             void KeyToContinueWithClearConsole()
             {
                 KeyToContinue();
                 ClearConsole();
             }
 
+        }
 
+        public int GetAge()
+        {
+            Console.WriteLine("How old are you?");
+            string ageAsString = Console.ReadLine();
+
+            int ageAsInt = int.Parse(ageAsString);
+            return ageAsInt;
+        }
+
+
+        public void TellTheUserHowOldTheyAre(string name)
+        {
+            int age = GetAge();
+            Console.WriteLine($"Hey {name}, you are {age} years old");
         }
     }
 }
